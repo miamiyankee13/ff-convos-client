@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: S4RzStTWsJ7VakLEOVU2PsgW5qNVpuarW5SIfUf2+WQMfgq1Bm2rUmFX3IVyY5XPKsvpQTXPZ13O8ctLDzkOR6p2Xizm32PuIMXHI4fmtIj8mwptE2Em8BZdwghA88lCXBIVbVdL8PUch+P0yiUM0QyMqANnSC2ji0PgO+EUagvxppLoxZWz8eDE3XauGZ9ZIo4gppF2R2W8GxDAFPMSNl0r4VWJQgKVg1VO0lPqUgyTFvix96at8OWTC/DGNzZFrttpip85KAKISHL9+tg4deJXe1UJfIcW+dOLXE7CiB+0XOPaDqA6LfK/H58BTaCzRcOR+ArxIddI1wqmgkoZ0baSAKuzw9gEvNSnKWGun7V5LLKhcEXNkcsIn2UCEax6OjHpmovJoJsLCI6LTXX2rVnTCRH0Jl9o+kmw0JE9FdgXdqLVK0i6HAC/8d9gPrsz0lcj+NeuthTrXuHIbWOpQrTL9ToJZ6PwnYnukT2b1jQHJlFtSQZ07cEkv23qEOZkygLA98M6ljgtJzfCMZjvvYWBQp74dTw0/u7NEwe4sYsTEVm9I6I/wJD/ICoAzFdGwTdXN4jT5BmYO7xTgR/KM975QjUrOujBFFHgccYK7eWq7YfVKGvHz50F158gVRA0DEUA8SmfnbhCeGBD/1DvHVihFztp4WeoxhECXCE2m9s=
+  app: ff-convos-client
+  on:
+    repo: miamiyankee13/ff-convos-client
