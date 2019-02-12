@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import LoginForm from './login-form';
 
 export class LoginPage extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export class LoginPage extends React.Component {
         
         return (
             <section aria-live="polite">
-                <p>Login Form</p>
+                <LoginForm />
                 <button onClick={this.goToRegistration}>Register</button>
             </section>
         );
