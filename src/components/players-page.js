@@ -1,4 +1,5 @@
 import React from 'react';
+import requiresLogin from './requires-login';
 
 export class PlayersPage extends React.Component {
     render() {
