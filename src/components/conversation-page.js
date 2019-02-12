@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import requiresLogin from './requires-login';
 
-export default class ConversationPage extends React.Component {
+export class ConversationPage extends React.Component {
     render() {
         return (
             <section className="flex-convo" aria-live="polite">
@@ -13,3 +15,5 @@ export default class ConversationPage extends React.Component {
         );
     }
 }
+
+export default requiresLogin()(connect()(ConversationPage));

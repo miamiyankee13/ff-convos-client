@@ -6,7 +6,7 @@ import LoginPage from './login-page';
 import RegistrationPage from './registration-page';
 import PlayersPage from './players-page';
 import ConversationPage from './conversation-page';
-import AddPlayerPage from './add-player-page';
+import CreatePlayerPage from './create-player-page';
 import EditPlayerPage from './edit-player-page';
 import NotFoundPage from './not-found-page';
 import { refreshAuthToken } from '../actions/auth';
@@ -53,7 +53,7 @@ export class App extends React.Component {
                             <Route exact path="/register" component={RegistrationPage} />
                             <Route exact path="/players" component={PlayersPage} />
                             <Route exact path="/players/:id" component={ConversationPage} />
-                            <Route exact path="/add" component={AddPlayerPage} />
+                            <Route exact path="/add" component={CreatePlayerPage} />
                             <Route exact path="/edit" component={EditPlayerPage} />
                             <Route component={NotFoundPage} />
                         </Switch>

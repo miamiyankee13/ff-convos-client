@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import requiresLogin from './requires-login';
 
-export default class EditPlayerPage extends React.Component {
+export class EditPlayerPage extends React.Component {
     render() {
         return (
             <section aria-live="polite">
@@ -10,3 +12,5 @@ export default class EditPlayerPage extends React.Component {
         );
     }
 }
+
+export default requiresLogin()(connect()(EditPlayerPage));
