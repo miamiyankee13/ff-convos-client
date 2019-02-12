@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class PlayersPage extends React.Component {
+export class PlayersPage extends React.Component {
     render() {
         return (
             <section aria-live="polite">
@@ -15,3 +15,5 @@ export default class PlayersPage extends React.Component {
         );
     }
 }
+
+export default requiresLogin()(connect()(PlayersPage));
