@@ -16,4 +16,4 @@ export class PlayersPage extends React.Component {
     }
 }
 
-export default (connect()(PlayersPage));
+export default connect()(PlayersPage);
