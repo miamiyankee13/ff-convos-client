@@ -1,7 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-export default class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.goToLogin = this.goToLogin.bind(this);
+    }
+
+    goToLogin(event) {
+        event.preventDefault();
+        this.props.history.push(`/login`);
+    }
+
     render() {
+        if (this.props.loggedIn) {
+            return <Redirect to="/players" />;
+        }
+
         return (
             <section className="home" aria-live="polite">
                 <p>
@@ -14,7 +31,14 @@ export default class LandingPage extends React.Component {
                     useful pieces of information out there are thought-provoking conversations. Our goal at FF 
                     Convos is to provide a simple platform where these conversations can take place!
                 </p>
+                <button onClick={this.goToLogin}>Go to Login</button>
             </section>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(LandingPage);
