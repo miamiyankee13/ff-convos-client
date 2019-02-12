@@ -1,12 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-export default class RegistrationPage extends React.Component {
+import RegistrationForm from './registration-form';
+
+export class RegistrationPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.goBackToLogin = this.goBackToLogin.bind(this);
+    }
+
+    goBackToLogin(event) {
+        event.preventDefault();
+        this.props.history.push(`/login`);
+    }
+
     render() {
+        if (this.props.loggedIn) {
+            return <Redirect to="/players" />;
+        }
+
         return (
             <section aria-live="polite">
-                <p>Registration Form</p>
-                <button>Back to Login</button>
+                <RegistrationForm />
+                <button onClick={this.goBackToLogin}>Back to Login</button>
             </section>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(RegistrationPage);
