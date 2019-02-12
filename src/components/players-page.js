@@ -1,5 +1,4 @@
 import React from 'react';
-import requiresLogin from './requires-login';
 
 export class PlayersPage extends React.Component {
     render() {
@@ -17,4 +16,4 @@ export class PlayersPage extends React.Component {
     }
 }
 
-export default requiresLogin()(connect()(PlayersPage));
+export default (connect()(PlayersPage));
