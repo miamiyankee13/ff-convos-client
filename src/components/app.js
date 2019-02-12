@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom'
+import Header from './header';
 import LandingPage from './landing-page';
 import LoginPage from './login-page';
 import RegistrationPage from './registration-page';
@@ -44,7 +45,7 @@ export class App extends React.Component {
     render() {
         return (
             <div className="flex-container">
-                <h1>HEADER</h1>
+                <Header />
                 <div className="flex-bottom">
                     <main className="flex-main">
                         <Switch>
@@ -52,8 +53,8 @@ export class App extends React.Component {
                             <Route exact path="/login" component={LoginPage} />
                             <Route exact path="/register" component={RegistrationPage} />
                             <Route exact path="/players" component={PlayersPage} />
-                            <Route exact path="/players/:id" component={ConversationPage} />
-                            <Route exact path="/add" component={CreatePlayerPage} />
+                            <Route exact path="/players/:id([0-9a-fA-F]{24})" component={ConversationPage} />
+                            <Route exact path="/create" component={CreatePlayerPage} />
                             <Route exact path="/edit" component={EditPlayerPage} />
                             <Route component={NotFoundPage} />
                         </Switch>
