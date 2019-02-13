@@ -3,12 +3,26 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import LoadingPage from './loading-page'
 import PlayerDropdown from './player-dropdown';
-import { fetchPlayers, fetchUserPlayers } from '../actions/players';
+import { fetchPlayers, fetchUserPlayers, removePlayerFromUser } from '../actions/players';
 
 export class PlayersPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.untrackPlayer = this.untrackPlayer.bind(this);
+    }
+    
     componentDidMount() {
         this.props.dispatch(fetchPlayers());
         this.props.dispatch(fetchUserPlayers());
+    }
+
+    untrackPlayer(event) {
+        event.preventDefault();
+        const index = event.target.getAttribute('data-index');
+        const player = this.props.userPlayers[index];
+        this.props.dispatch(removePlayerFromUser(player._id))
+            .then(() => this.props.dispatch(fetchUserPlayers()));
     }
     
     render() {
@@ -37,7 +51,7 @@ export class PlayersPage extends React.Component {
                     <h2>{player.name}</h2>
                     <p>{player.position} {player.number} | {player.team}</p>
                     <button data-index={index}>Conversation</button>
-                    <button data-index={index}>Untrack</button>
+                    <button data-index={index} onClick={this.untrackPlayer}>Untrack</button>
                 </div>
             )
         });
