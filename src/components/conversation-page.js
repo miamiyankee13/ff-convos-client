@@ -61,6 +61,10 @@ export class ConversationPage extends React.Component {
             return <LoadingPage />
         }
 
+        //If error, return error
+        if (this.props.error) {
+            return <p className="error">{this.props.error}</p>
+        }
         //If no player, return null
         if (!this.props.player) {
             return null;
@@ -118,7 +122,7 @@ export class ConversationPage extends React.Component {
 
 const mapStateToProps = state => ({
     loading: state.playersData.loading,
-    feedback: state.playersData.feedback,
+    error: state.playersData.error,
     player: state.playersData.currentPlayer,
     currentUser: state.auth.currentUser.username
 });
