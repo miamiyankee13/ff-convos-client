@@ -321,3 +321,26 @@ export const createPlayer = (name, position, number, team) => (dispatch, getStat
         .then(() => dispatch(createPlayerSuccess()))
         .catch(err => dispatch(createPlayerError(err)));
 }
+
+export const editPlayer = (id, name, position, number, team) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(editPlayerRequest());
+    return fetch(`${API_BASE_URL}/api/players/${id}`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            _id: id,
+            name,
+            position,
+            number,
+            team
+        })
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(editPlayerSuccess()))
+        .catch(err => dispatch(editPlayerError(err)));
+}

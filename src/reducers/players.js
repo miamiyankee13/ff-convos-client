@@ -26,7 +26,10 @@ import {
     REMOVE_COMMENT_FROM_PLAYER_ERROR,
     CREATE_PLAYER_REQUEST,
     CREATE_PLAYER_SUCCESS,
-    CREATE_PLAYER_ERROR
+    CREATE_PLAYER_ERROR,
+    EDIT_PLAYER_REQUEST,
+    EDIT_PLAYER_SUCCESS,
+    EDIT_PLAYER_ERROR
 } from '../actions/players';
 
 const initialState = {
@@ -201,7 +204,23 @@ export default function reducer(state = initialState, action) {
                 feedback: {success: false, message: action.error.message},
                 error: action.error
             });
-            
+        case EDIT_PLAYER_REQUEST:
+            return Object.assign({}, state, {
+                loading: true,
+                feedback: null,
+                error: null
+            });
+        case EDIT_PLAYER_SUCCESS:
+            return Object.assign({}, state, {
+                loading: false,
+                feedback: {success: true, message: 'Player edited!'}
+            });
+        case EDIT_PLAYER_ERROR:
+            return Object.assign({}, state, {
+                loading: false, 
+                feedback: {success: false, message: action.error.message},
+                error: action.error
+            });
         default:
             return state;
     }
