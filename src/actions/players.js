@@ -191,3 +191,18 @@ export const fetchPlayers = () => (dispatch) => {
         .then(res => dispatch(fetchPlayersSuccess(res)))
         .catch(err => dispatch(fetchPlayersError(err)));
 }
+
+export const fetchUserPlayers = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(fetchUserPlayersRequest());
+    return fetch(`${API_BASE_URL}/api/users/players`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(res => dispatch(fetchUserPlayersSuccess(res)))
+        .catch(err => dispatch(fetchUserPlayersError(err)));
+}
