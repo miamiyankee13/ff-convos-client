@@ -11,7 +11,10 @@ import {
     FETCH_CURRENT_PLAYER_REQUEST,
     FETCH_CURRENT_PLAYER_SUCCESS,
     FETCH_CURRENT_PLAYER_ERROR,
-    CLEAR_CURRENT_PLAYER
+    CLEAR_CURRENT_PLAYER,
+    ADD_PLAYER_TO_USER_REQUEST,
+    ADD_PLAYER_TO_USER_SUCCESS,
+    ADD_PLAYER_TO_USER_ERROR
 } from '../actions/players';
 
 const initialState = {
@@ -101,7 +104,24 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 currentPlayer: null
             });
-
+        case ADD_PLAYER_TO_USER_REQUEST:
+            return Object.assign({}, state, {
+                loading: true,
+                feedback: null,
+                error: null
+            });
+        case ADD_PLAYER_TO_USER_SUCCESS:
+            return Object.assign({}, state, {
+                loading: false,
+                feedback: {success: true, message: 'Player added to user!'}
+            });
+        case ADD_PLAYER_TO_USER_ERROR:
+            return Object.assign({}, state, {
+                loading: false, 
+                feedback: {success: false, message: action.error.message},
+                error: action.error
+            });
+            
         default:
             return state;
     }

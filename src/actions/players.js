@@ -232,3 +232,18 @@ export const fetchCurrentPlayer = (id) => (dispatch) => {
         .then(res => dispatch(fetchCurrentPlayerSuccess(res)))
         .catch(err => dispatch(fetchCurrentPlayerError(err)));
 }
+
+export const addPlayerToUser = (id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(addPlayerToUserRequest());
+    return fetch(`${API_BASE_URL}/api/users/players/${id}`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(addPlayerToUserSuccess())) 
+        .catch(err => dispatch(addPlayerToUserError(err)));
+}
