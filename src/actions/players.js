@@ -247,3 +247,18 @@ export const addPlayerToUser = (id) => (dispatch, getState) => {
         .then(() => dispatch(addPlayerToUserSuccess())) 
         .catch(err => dispatch(addPlayerToUserError(err)));
 }
+
+export const removePlayerFromUser = (id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(removePlayerFromUserRequest());
+    return fetch(`${API_BASE_URL}/api/users/players/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(removePlayerFromUserSuccess())) 
+        .catch(err => dispatch(removePlayerFromUserError(err)));
+}
