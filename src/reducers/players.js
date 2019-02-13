@@ -59,7 +59,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false,
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case FETCH_USER_PLAYERS_REQUEST:
             return Object.assign({}, state, {
@@ -77,7 +77,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case FETCH_USER_PLAYERS_BY_POSITION_REQUEST:
             return Object.assign({}, state, {
@@ -95,7 +95,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case FETCH_CURRENT_PLAYER_REQUEST:
             return Object.assign({}, state, {
@@ -113,7 +113,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case CLEAR_CURRENT_PLAYER:
             return Object.assign({}, state, {
@@ -134,7 +134,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case REMOVE_PLAYER_FROM_USER_REQUEST:
             return Object.assign({}, state, {
@@ -151,7 +151,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case ADD_COMMENT_TO_PLAYER_REQUEST:
             return Object.assign({}, state, {
@@ -168,7 +168,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case REMOVE_COMMENT_FROM_PLAYER_REQUEST:
             return Object.assign({}, state, {
@@ -185,7 +185,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case CREATE_PLAYER_REQUEST:
             return Object.assign({}, state, {
@@ -202,7 +202,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         case EDIT_PLAYER_REQUEST:
             return Object.assign({}, state, {
@@ -219,7 +219,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
-                error: action.error
+                error: action.error.message
             });
         default:
             return state;
