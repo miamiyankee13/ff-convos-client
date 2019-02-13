@@ -7,7 +7,7 @@ export class PlayerDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            optionValue: null
+            optionValue: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -38,9 +38,15 @@ export class PlayerDropdown extends React.Component {
             <div>
                 <form onSubmit={this.trackPlayer}>
                     <label htmlFor="player-select">Track Player</label>
-                    <select id="player-select" name="player-select" onChange={this.handleChange}>
-                    <option value="">--Select a Player--</option>
-                    <PlayerOptions />
+                    <select 
+                        id="player-select" 
+                        name="player-select" 
+                        value={this.state.optionValue} 
+                        onChange={this.handleChange} 
+                        required
+                    >
+                        <option value="">--Select a Player--</option>
+                        <PlayerOptions />
                     </select>
                     <button type="submit">Track Player</button>
                 </form>

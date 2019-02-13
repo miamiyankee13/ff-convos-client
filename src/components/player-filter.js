@@ -6,7 +6,7 @@ export class PlayerFilter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            optionValue: null,
+            optionValue: ''
         };
 
         this.filterPlayers = this.filterPlayers.bind(this);
@@ -34,7 +34,12 @@ export class PlayerFilter extends React.Component {
             <div>
                 <form onSubmit={this.filterPlayers}>
                     <label htmlFor="player-filter">Filter Players</label>
-                    <select id="player-filter" onChange={this.handleChange}>
+                    <select 
+                        id="player-filter" 
+                        value={this.state.optionValue} 
+                        onChange={this.handleChange} 
+                        required
+                    >
                         <option value="">--Filter by Position--</option>
                         <option value="QB">QB</option>
                         <option value="RB">RB</option>
