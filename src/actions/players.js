@@ -180,3 +180,14 @@ export const editPlayerError = error => ({
     type: EDIT_PLAYER_ERROR,
     error
 });
+
+export const fetchPlayers = () => (dispatch) => {
+    dispatch(fetchPlayersRequest());
+    return fetch(`${API_BASE_URL}/api/players`, {
+        method: 'GET'
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(res => dispatch(fetchPlayersSuccess(res)))
+        .catch(err => dispatch(fetchPlayersError(err)));
+}

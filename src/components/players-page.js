@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
+import { fetchPlayers } from '../actions/players';
 
 export class PlayersPage extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchPlayers());
+    }
+    
     render() {
         return (
             <section aria-live="polite">
@@ -18,4 +23,11 @@ export class PlayersPage extends React.Component {
     }
 }
 
-export default requiresLogin()(connect()(PlayersPage));
+const mapStateToProps = state => {
+    return {
+        loading: state.playersData.loading,
+        players: state.playersData.players
+    }
+}
+
+export default requiresLogin()(connect(mapStateToProps)(PlayersPage));
