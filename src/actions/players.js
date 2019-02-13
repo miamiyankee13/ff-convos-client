@@ -221,3 +221,14 @@ export const fetchUserPlayersByPosition = (position) => (dispatch, getState) => 
         .then(res => dispatch(fetchUserPlayersByPositionSuccess(res)))
         .catch(err => dispatch(fetchUserPlayersByPositionError(err)));
 }
+
+export const fetchCurrentPlayer = (id) => (dispatch) => {
+    dispatch(fetchCurrentPlayerRequest());
+    return fetch(`${API_BASE_URL}/api/players/${id}`, {
+        method: 'GET'
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(res => dispatch(fetchCurrentPlayerSuccess(res)))
+        .catch(err => dispatch(fetchCurrentPlayerError(err)));
+}

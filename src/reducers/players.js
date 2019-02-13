@@ -7,7 +7,11 @@ import {
     FETCH_USER_PLAYERS_ERROR,
     FETCH_USER_PLAYERS_BY_POSITION_REQUEST,
     FETCH_USER_PLAYERS_BY_POSITION_SUCCESS,
-    FETCH_USER_PLAYERS_BY_POSITION_ERROR
+    FETCH_USER_PLAYERS_BY_POSITION_ERROR,
+    FETCH_CURRENT_PLAYER_REQUEST,
+    FETCH_CURRENT_PLAYER_SUCCESS,
+    FETCH_CURRENT_PLAYER_ERROR,
+    CLEAR_CURRENT_PLAYER
 } from '../actions/players';
 
 const initialState = {
@@ -74,6 +78,28 @@ export default function reducer(state = initialState, action) {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
                 error: action.error
+            });
+        case FETCH_CURRENT_PLAYER_REQUEST:
+            return Object.assign({}, state, {
+                loading: true,
+                feedback: null,
+                error: null
+            });
+        case FETCH_CURRENT_PLAYER_SUCCESS:
+            return Object.assign({}, state, {
+                loading: false,
+                feedback: {success: true, message: 'Player fetched!'},
+                currentPlayer: action.data
+            });
+        case FETCH_CURRENT_PLAYER_ERROR:
+            return Object.assign({}, state, {
+                loading: false, 
+                feedback: {success: false, message: action.error.message},
+                error: action.error
+            });
+        case CLEAR_CURRENT_PLAYER:
+            return Object.assign({}, state, {
+                currentPlayer: null
             });
 
         default:
