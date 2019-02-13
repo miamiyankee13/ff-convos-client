@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
+import { fetchPlayers } from '../actions/players';
 
 export class EditPlayerPage extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchPlayers())
+    }
+    
     render() {
         return (
             <section aria-live="polite">
