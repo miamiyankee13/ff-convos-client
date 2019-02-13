@@ -10,6 +10,7 @@ export class PlayersPage extends React.Component {
         super(props);
 
         this.untrackPlayer = this.untrackPlayer.bind(this);
+        this.viewConvo = this.viewConvo.bind(this);
     }
     
     componentDidMount() {
@@ -23,6 +24,13 @@ export class PlayersPage extends React.Component {
         const player = this.props.userPlayers[index];
         this.props.dispatch(removePlayerFromUser(player._id))
             .then(() => this.props.dispatch(fetchUserPlayers()));
+    }
+
+    viewConvo(event) {
+        event.preventDefault();
+        const index = event.target.getAttribute('data-index');
+        const player = this.props.userPlayers[index];
+        this.props.history.push(`/players/${player._id}`);
     }
     
     render() {
@@ -50,7 +58,7 @@ export class PlayersPage extends React.Component {
                 <div key={`player-${index}`} className="player">
                     <h2>{player.name}</h2>
                     <p>{player.position} {player.number} | {player.team}</p>
-                    <button data-index={index}>Conversation</button>
+                    <button data-index={index} onClick={this.viewConvo}>Conversation</button>
                     <button data-index={index} onClick={this.untrackPlayer}>Untrack</button>
                 </div>
             )
