@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import LoadingPage from './loading-page'
 import PlayerDropdown from './player-dropdown';
+import PlayerFilter from './player-filter';
 import { fetchPlayers, fetchUserPlayers, removePlayerFromUser } from '../actions/players';
 
 export class PlayersPage extends React.Component {
@@ -69,6 +70,7 @@ export class PlayersPage extends React.Component {
             <section aria-live="polite">
                 <div className="flex-forms">
                     <PlayerDropdown />
+                    <PlayerFilter />
                 </div>
                 <h3>Players Tracked: {userPlayers.length}</h3>
                 <div className="flex-players">
