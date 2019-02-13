@@ -282,5 +282,20 @@ export const addCommentToPlayer = (id, content, author) => (dispatch, getState) 
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(addCommentToPlayerSuccess()))
-        .catch(err => dispatch(addCommentToPlayerError())); 
+        .catch(err => dispatch(addCommentToPlayerError(err))); 
+}
+
+export const removeCommentFromPlayer = (id, commentId) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(removeCommentFromPlayerRequest());
+    return fetch(`${API_BASE_URL}/api/players/${id}/${commentId}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(removeCommentFromPlayerSuccess()))
+        .catch(err => dispatch(removeCommentFromPlayerError(err)));
 }

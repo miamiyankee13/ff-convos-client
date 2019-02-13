@@ -20,7 +20,10 @@ import {
     REMOVE_PLAYER_FROM_USER_ERROR,
     ADD_COMMENT_TO_PLAYER_REQUEST,
     ADD_COMMENT_TO_PLAYER_SUCCESS,
-    ADD_COMMENT_TO_PLAYER_ERROR
+    ADD_COMMENT_TO_PLAYER_ERROR,
+    REMOVE_COMMENT_FROM_PLAYER_REQUEST,
+    REMOVE_COMMENT_FROM_PLAYER_SUCCESS,
+    REMOVE_COMMENT_FROM_PLAYER_ERROR
 } from '../actions/players';
 
 const initialState = {
@@ -156,6 +159,23 @@ export default function reducer(state = initialState, action) {
                 feedback: {success: true, message: 'Comment added to player!'}
             });
         case ADD_COMMENT_TO_PLAYER_ERROR:
+            return Object.assign({}, state, {
+                loading: false, 
+                feedback: {success: false, message: action.error.message},
+                error: action.error
+            });
+        case REMOVE_COMMENT_FROM_PLAYER_REQUEST:
+            return Object.assign({}, state, {
+                loading: true,
+                feedback: null,
+                error: null
+            });
+        case REMOVE_COMMENT_FROM_PLAYER_SUCCESS:
+            return Object.assign({}, state, {
+                loading: false,
+                feedback: {success: true, message: 'Comment removed from player!'}
+            });
+        case REMOVE_COMMENT_FROM_PLAYER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
                 feedback: {success: false, message: action.error.message},
