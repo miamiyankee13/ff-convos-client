@@ -13,7 +13,7 @@ export class PlayerOptions extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    players: state.playerData.players
+    players: state.playersData.players
 });
 
 export default connect(mapStateToProps)(PlayerOptions);
