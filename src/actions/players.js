@@ -206,3 +206,18 @@ export const fetchUserPlayers = () => (dispatch, getState) => {
         .then(res => dispatch(fetchUserPlayersSuccess(res)))
         .catch(err => dispatch(fetchUserPlayersError(err)));
 }
+
+export const fetchUserPlayersByPosition = (position) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(fetchUserPlayersByPositionRequest());
+    return fetch(`${API_BASE_URL}/api/users/players/${position}`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(res => dispatch(fetchUserPlayersByPositionSuccess(res)))
+        .catch(err => dispatch(fetchUserPlayersByPositionError(err)));
+}
