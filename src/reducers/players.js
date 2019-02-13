@@ -52,13 +52,11 @@ export default function reducer(state = initialState, action) {
         case FETCH_PLAYERS_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Players fetched!'},
                 players: action.data.players
             });
         case FETCH_PLAYERS_ERROR:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case FETCH_USER_PLAYERS_REQUEST:
@@ -70,13 +68,11 @@ export default function reducer(state = initialState, action) {
         case FETCH_USER_PLAYERS_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'User players fetched!'},
                 userPlayers: action.data.players
             });
         case FETCH_USER_PLAYERS_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case FETCH_USER_PLAYERS_BY_POSITION_REQUEST:
@@ -88,13 +84,11 @@ export default function reducer(state = initialState, action) {
         case FETCH_USER_PLAYERS_BY_POSITION_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'User players fetched by position!'},
                 userPlayers: action.data.players
             });
         case FETCH_USER_PLAYERS_BY_POSITION_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case FETCH_CURRENT_PLAYER_REQUEST:
@@ -106,13 +100,11 @@ export default function reducer(state = initialState, action) {
         case FETCH_CURRENT_PLAYER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Player fetched!'},
                 currentPlayer: action.data
             });
         case FETCH_CURRENT_PLAYER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case CLEAR_CURRENT_PLAYER:
@@ -128,12 +120,10 @@ export default function reducer(state = initialState, action) {
         case ADD_PLAYER_TO_USER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Player added to user!'}
             });
         case ADD_PLAYER_TO_USER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case REMOVE_PLAYER_FROM_USER_REQUEST:
@@ -145,12 +135,10 @@ export default function reducer(state = initialState, action) {
         case REMOVE_PLAYER_FROM_USER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Player removed from user!'}
             });
         case REMOVE_PLAYER_FROM_USER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case ADD_COMMENT_TO_PLAYER_REQUEST:
@@ -162,12 +150,10 @@ export default function reducer(state = initialState, action) {
         case ADD_COMMENT_TO_PLAYER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Comment added to player!'}
             });
         case ADD_COMMENT_TO_PLAYER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case REMOVE_COMMENT_FROM_PLAYER_REQUEST:
@@ -179,12 +165,10 @@ export default function reducer(state = initialState, action) {
         case REMOVE_COMMENT_FROM_PLAYER_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                feedback: {success: true, message: 'Comment removed from player!'}
             });
         case REMOVE_COMMENT_FROM_PLAYER_ERROR:
             return Object.assign({}, state, {
                 loading: false, 
-                feedback: {success: false, message: action.error.message},
                 error: action.error.message
             });
         case CREATE_PLAYER_REQUEST:
