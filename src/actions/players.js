@@ -299,3 +299,25 @@ export const removeCommentFromPlayer = (id, commentId) => (dispatch, getState) =
         .then(() => dispatch(removeCommentFromPlayerSuccess()))
         .catch(err => dispatch(removeCommentFromPlayerError(err)));
 }
+
+export const createPlayer = (name, position, number, team) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(createPlayerRequest());
+    return fetch(`${API_BASE_URL}/api/players`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            name,
+            position,
+            number,
+            team
+        })
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(createPlayerSuccess()))
+        .catch(err => dispatch(createPlayerError(err)));
+}
