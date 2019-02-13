@@ -262,3 +262,25 @@ export const removePlayerFromUser = (id) => (dispatch, getState) => {
         .then(() => dispatch(removePlayerFromUserSuccess())) 
         .catch(err => dispatch(removePlayerFromUserError(err)));
 }
+
+export const addCommentToPlayer = (id, content, author) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(addCommentToPlayerRequest());
+    return fetch(`${API_BASE_URL}/api/players/${id}`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            comment: {
+                content,
+                author
+            }
+        })
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(addCommentToPlayerSuccess()))
+        .catch(err => dispatch(addCommentToPlayerError())); 
+}
