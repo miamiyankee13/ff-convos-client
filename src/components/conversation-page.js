@@ -101,7 +101,11 @@ export class ConversationPage extends React.Component {
                 <p>{this.props.player.position} {this.props.player.number} | {this.props.player.team}</p>
                 <div>
                     <h4>Player Conversation</h4>
-                    {comments}
+                    {
+                        (comments.length === 0) 
+                        ? <p>Be the first to start the conversation about {this.props.player.name}!</p> 
+                        : comments
+                    }
                     <br />
                     <label htmlFor="add-comment">Add Comment</label>
                     <textarea
