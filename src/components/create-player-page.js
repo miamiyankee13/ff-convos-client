@@ -11,6 +11,7 @@ export class CreatePlayerPage extends React.Component {
             return <LoadingPage />
         }
         
+        //Display success or error message
         let message;
         if (this.props.feedback) {
             switch(this.props.feedback.success) {
@@ -36,7 +37,8 @@ export class CreatePlayerPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    feedback: state.playersData.feedback
+    feedback: state.playersData.feedback,
+    loading: state.playersData.loading
 });
 
 export default requiresLogin()(connect(mapStateToProps)(CreatePlayerPage));
