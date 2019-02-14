@@ -1,4 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FF Convos Client
+
+## Summary
+FF Convos allows you to keep track of fantasy football players through conversations.
+Fantasy football has steadily grown into somewhat of a phenomenon. In our opinion, it is
+not slowing down any time soon. These days, the amount of resources that provide information
+on fantasy football can be overwhelming. Aside from analytics, we believe that the most 
+useful pieces of information out there are thought-provoking conversations. Our goal at FF 
+Convos is to provide a simple platform where these conversations can take place!
+The data for this application is provided by the [FF Convos API](https://github.com/miamiyankee13/ff-convos-api).
+
+## Live Demo
+[FF Convos](https://ff-convos-client.herokuapp.com/)
+
+## Features
+* Register
+* Login
+* Track players
+* Untrack players
+* Filter tracked players by position
+* View conversations about tracked players
+* Contribute to conversations about tracked players
+* Create a player
+* Edit an existing player
+
+## Built with
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
+* React Router
+* Redux Form
+* Redux Thunk
+* JSON Web Token (JWT)
 
 ## Available Scripts
 
@@ -37,32 +71,5 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Authors
+* **Anthony D'Amico** [miamiyankee13](https://github.com/miamiyankee13)
