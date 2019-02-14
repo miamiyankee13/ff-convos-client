@@ -23,7 +23,7 @@ The data for this application is provided by the [FF Convos API](https://github.
 * Create a player
 * Edit an existing player
 
-## Built with
+## Built With
 * HTML
 * CSS
 * JavaScript
