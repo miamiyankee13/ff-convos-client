@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import LoadingPage from './loading-page';
 import { fetchCurrentPlayer, clearCurrentPlayer, addCommentToPlayer, removeCommentFromPlayer} from '../actions/players';
+import './styles/conversation-page.css';
 
 export class ConversationPage extends React.Component {
     constructor(props) {
@@ -86,11 +87,11 @@ export class ConversationPage extends React.Component {
 
             return (
                 <div key={`comment-${index}`}>
-                    <br />
                     <p className="comment-content"><em>{comment.content}</em></p>
                     <p><small>Posted by {comment.author}</small></p>
                     <p><small>{month}/{day} @ {time}</small></p>
                     {removeButton}
+                    <br />
                 </div>
             );
         });
@@ -98,15 +99,17 @@ export class ConversationPage extends React.Component {
         return (
             <section className="flex-convo" aria-live="polite">
                 <h2>{this.props.player.name}</h2>
-                <p>{this.props.player.position} {this.props.player.number} | {this.props.player.team}</p>
+                <br />
+                <p>{this.props.player.position} #{this.props.player.number} | {this.props.player.team}</p>
+                <br />
                 <div>
                     <h4>Player Conversation</h4>
+                    <br />
                     {
                         (comments.length === 0) 
                         ? <p>Be the first to start the conversation about {this.props.player.name}!</p> 
                         : comments
                     }
-                    <br />
                     <label htmlFor="add-comment">Add Comment</label>
                     <textarea
                     id="add-comment"

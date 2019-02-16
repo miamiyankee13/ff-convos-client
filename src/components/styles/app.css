@@ -1,0 +1,23 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 10px;
+}
+
+.flex-bottom {
+    flex: 10;
+    overflow-y: scroll;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-main {
+    flex: 10;
+}
+
+.flex-footer {
+    flex: 1;
+    margin-bottom: 10px;
+}

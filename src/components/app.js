@@ -11,6 +11,7 @@ import CreatePlayerPage from './create-player-page';
 import EditPlayerPage from './edit-player-page';
 import NotFoundPage from './not-found-page';
 import { refreshAuthToken } from '../actions/auth';
+import './styles/app.css';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

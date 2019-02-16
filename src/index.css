@@ -4,3 +4,42 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
 }
+
+input, textarea, label, select, button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, textarea {
+    font-size: 16px;
+}
+
+select, button {
+    font-size: 14px;
+}
+
+button {
+    margin-top: 5px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+label {
+    margin: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    max-width: 300px;
+}
+
+small {
+    font-weight: bold;
+}

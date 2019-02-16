@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import './styles/landing-page.css';
 
 export class LandingPage extends React.Component {
     constructor(props) {
@@ -24,6 +25,7 @@ export class LandingPage extends React.Component {
                 <p>
                     FF Convos allows you to keep track of fantasy football players through conversations.
                 </p>
+                <br />
                 <p>
                     Fantasy football has steadily grown into somewhat of a phenomenon. In our opinion, it is
                     not slowing down any time soon. These days, the amount of resources that provide information

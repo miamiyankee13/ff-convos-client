@@ -5,6 +5,7 @@ import LoadingPage from './loading-page'
 import PlayerDropdown from './player-dropdown';
 import PlayerFilter from './player-filter';
 import { fetchPlayers, fetchUserPlayers, removePlayerFromUser } from '../actions/players';
+import './styles/players-page.css';
 
 export class PlayersPage extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ export class PlayersPage extends React.Component {
             return (
                 <div key={`player-${index}`} className="player">
                     <h2>{player.name}</h2>
-                    <p>{player.position} {player.number} | {player.team}</p>
+                    <p>{player.position} #{player.number} | {player.team}</p>
                     <button data-index={index} onClick={this.viewConvo}>Conversation</button>
                     <button data-index={index} onClick={this.untrackPlayer}>Untrack</button>
                 </div>
@@ -73,6 +74,7 @@ export class PlayersPage extends React.Component {
                     <PlayerFilter />
                 </div>
                 <h3>Players Tracked: {userPlayers.length}</h3>
+                <br />
                 <div className="flex-players">
                     {userPlayers}
                 </div>

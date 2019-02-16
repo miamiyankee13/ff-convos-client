@@ -1,0 +1,14 @@
+.flex-nav {
+    display: inline-flex;
+}
+
+.nav-item {
+    list-style-type: none;
+    margin: 25px;
+}
+
+@media (max-width: 845px) {
+    .nav-item {
+        margin: 10px;
+    }
+}
