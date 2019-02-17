@@ -3,12 +3,25 @@
 }
 
 .nav-item {
+    margin: 5px;
     list-style-type: none;
-    margin: 25px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 @media (max-width: 845px) {
-    .nav-item {
-        margin: 10px;
+    .flex-nav {
+        flex-direction: column;
     }
 }

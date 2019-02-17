@@ -61,7 +61,7 @@ export class App extends React.Component {
                         </Switch>
                     </main>
                     <footer className="flex-footer">
-                        <p><small>Copyright &copy; 2019 Anthony D'Amico</small></p>
+                        <p><strong><small>Copyright &copy; 2019 Anthony D'Amico</small></strong></p>
                     </footer>
                 </div>
             </div>

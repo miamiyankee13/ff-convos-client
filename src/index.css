@@ -17,6 +17,7 @@ input, textarea {
 
 select, button {
     font-size: 14px;
+    background-color: white;
 }
 
 button {
@@ -38,10 +39,6 @@ label {
 
 textarea {
     max-width: 300px;
-}
-
-small {
-    font-weight: bold;
 }
 
 .form-error, .form-warning {

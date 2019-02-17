@@ -73,8 +73,8 @@ export class PlayersPage extends React.Component {
                     <PlayerDropdown />
                     <PlayerFilter />
                 </div>
-                <h3>Players Tracked: {userPlayers.length}</h3>
                 <br />
+                <h3>Players Tracked: {userPlayers.length}</h3>
                 <div className="flex-players">
                     {userPlayers}
                 </div>
