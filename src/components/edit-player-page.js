@@ -21,10 +21,10 @@ export class EditPlayerPage extends React.Component {
         if (this.props.feedback) {
             switch(this.props.feedback.success) {
                 case true:
-                    message = <p className="success">{this.props.feedback.message}</p>;
+                    message = <p className="form-success">{this.props.feedback.message}</p>;
                     break;
                 case false:
-                    message = <p className="error">{this.props.feedback.message}</p>;
+                    message = <p className="form-error">{this.props.feedback.message}</p>;
                     break;
                 default:
                     message = '';
@@ -34,6 +34,7 @@ export class EditPlayerPage extends React.Component {
         return (
             <section aria-live="polite">
                 <h2>Edit a Player</h2>
+                <br />
                 {message}
                 <EditPlayerForm />
             </section>

@@ -43,3 +43,11 @@ textarea {
 small {
     font-weight: bold;
 }
+
+.form-error, .form-warning {
+    color: red;
+}
+
+.form-success {
+    color: green;
+}
