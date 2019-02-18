@@ -20,10 +20,10 @@ export class Nav extends React.Component {
     render() {
         return (
             <ul className="flex-nav" aria-live="polite">
-                <li className="nav-item"><Link to="/" onClick={this.logOut}>Log Out</Link></li>
                 <li className="nav-item"><Link to="/players">My Players</Link></li>
                 <li className="nav-item"><Link to="/create">Create Player</Link></li>
                 <li className="nav-item"><Link to="/edit">Edit Player</Link></li>
+                <li className="nav-item"><Link to="/" onClick={this.logOut}>Log Out</Link></li>
             </ul>
         );
     }

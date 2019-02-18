@@ -20,6 +20,7 @@ export class Header extends React.Component {
         return (
             <header role="banner" className="flex-top">
                 <h1>FF Convos</h1>
+                <br/>
                 {navigation}
             </header>
         );

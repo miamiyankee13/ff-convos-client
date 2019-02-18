@@ -58,8 +58,8 @@ export class PlayersPage extends React.Component {
         const userPlayers = this.props.userPlayers.map((player, index) => {
             return (
                 <div key={`player-${index}`} className="player">
-                    <h2>{player.name}</h2>
-                    <p>{player.position} #{player.number} | {player.team}</p>
+                    <h2 className="player-name">{player.name}</h2>
+                    <p className="player-info">{player.position} #{player.number} | {player.team}</p>
                     <button data-index={index} onClick={this.viewConvo}>Conversation</button>
                     <button data-index={index} onClick={this.untrackPlayer}>Untrack</button>
                 </div>
