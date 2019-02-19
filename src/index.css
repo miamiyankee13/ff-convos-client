@@ -56,3 +56,7 @@ textarea {
 .test-credentials {
     color: red;
 }
+
+#number, #number-edit {
+    width: 50px;
+}

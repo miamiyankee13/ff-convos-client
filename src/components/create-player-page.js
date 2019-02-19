@@ -28,8 +28,6 @@ export class CreatePlayerPage extends React.Component {
         
         return (
             <section aria-live="polite">
-                <h2>Create a Player</h2>
-                <br/>
                 {message}
                 <CreatePlayerForm />
             </section>

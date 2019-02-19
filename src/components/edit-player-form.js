@@ -66,7 +66,7 @@ export class EditPlayerForm extends React.Component {
     render() {
         return (
             <form className="edit-player-form" onSubmit={this.handleSubmit}>
-            <label htmlFor="player-edit">Player</label>
+            <label htmlFor="player-edit">Player to Edit</label>
             <select 
                 id="player-edit" 
                 name="player-edit" 
@@ -78,20 +78,20 @@ export class EditPlayerForm extends React.Component {
                 <PlayerOptions />
             </select>
             
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name-edit">Name</label>
                 <input 
                     type="text" 
-                    id="name" 
-                    name="name" 
+                    id="name-edit" 
+                    name="name-edit" 
                     value={this.state.nameValue}
                     onChange={this.handleNameChange}
                     required
                 />
 
-                <label htmlFor="position">Position</label>
+                <label htmlFor="position-edit">Position</label>
                 <select 
-                    id="position" 
-                    name="position"
+                    id="position-edit" 
+                    name="position-edit"
                     value={this.state.positionValue}
                     onChange={this.handlePositionChange} 
                     required
@@ -103,21 +103,21 @@ export class EditPlayerForm extends React.Component {
                     <option value="TE">TE</option>
                 </select>
 
-                <label htmlFor="number">Number</label>
+                <label htmlFor="number-edit">Number</label>
                 <input 
                     type="number" 
-                    id="number" 
-                    name="number" 
+                    id="number-edit" 
+                    name="number-edit" 
                     value={this.state.numberValue}
                     onChange={this.handleNumberChange}
                     required
                 />
 
-                <label htmlFor="team">Team</label>
+                <label htmlFor="team-edit">Team</label>
                 <input 
                     type="text" 
-                    id="team" 
-                    name="team" 
+                    id="team-edit" 
+                    name="team-edit" 
                     value={this.state.teamValue}
                     onChange={this.handleTeamChange}
                     required

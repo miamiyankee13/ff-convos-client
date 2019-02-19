@@ -33,8 +33,6 @@ export class EditPlayerPage extends React.Component {
 
         return (
             <section aria-live="polite">
-                <h2>Edit a Player</h2>
-                <br />
                 {message}
                 <EditPlayerForm />
             </section>
