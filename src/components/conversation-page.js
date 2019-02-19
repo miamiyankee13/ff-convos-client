@@ -100,7 +100,7 @@ export class ConversationPage extends React.Component {
             <section className="flex-convo" aria-live="polite">
                 <h2 className="player-name">{this.props.player.name}</h2>
                 <br />
-                <p className="player-info">{this.props.player.position} #{this.props.player.number} | {this.props.player.team}</p>
+                <p>{this.props.player.position} #{this.props.player.number} | {this.props.player.team}</p>
                 <br />
                 <div className="convo-area">
                     <h3>Player Conversation</h3>

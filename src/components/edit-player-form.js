@@ -111,6 +111,7 @@ export class EditPlayerForm extends React.Component {
                     value={this.state.numberValue}
                     onChange={this.handleNumberChange}
                     required
+                    min="0"
                 />
 
                 <label htmlFor="team-edit">Team</label>
