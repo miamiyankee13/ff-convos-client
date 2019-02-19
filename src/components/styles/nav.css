@@ -3,15 +3,9 @@
 }
 
 .nav-item {
-    margin: 5px;
     margin-left: 20px;
     margin-right: 20px;
     list-style-type: none;
-    cursor: pointer;
-}
-
-.nav-item:hover {
-    transform: scale(1.1);
 }
 
 a {
@@ -22,7 +16,7 @@ a {
 
 @media (max-width: 845px) {
     .nav-item {
-        margin: 2px;
-        padding: 3px;
+        margin-left: 6px;
+        margin-right: 6px;
     }
 }

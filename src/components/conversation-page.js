@@ -88,7 +88,7 @@ export class ConversationPage extends React.Component {
             return (
                 <div key={`comment-${index}`}>
                     <p className="comment-content"><em>{comment.content}</em></p>
-                    <p><small>Posted by <strong>{comment.author}</strong></small></p>
+                    <p><small>Posted by <strong className="author">{comment.author}</strong></small></p>
                     <p><small>{month}/{day} @ {time}</small></p>
                     {removeButton}
                     <br />
