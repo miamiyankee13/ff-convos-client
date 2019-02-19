@@ -52,3 +52,7 @@ textarea {
 .form-success {
     color: green;
 }
+
+.test-credentials {
+    color: red;
+}

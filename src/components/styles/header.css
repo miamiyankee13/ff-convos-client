@@ -1,9 +1,13 @@
 .flex-top {
     flex: 1;
     text-align: center;
-    margin-top: 25px;
 }
 
 header h1 {
     font-family: 'Merriweather', serif;
+    color: darkgoldenrod;
+}
+
+header {
+    background-color: white;
 }

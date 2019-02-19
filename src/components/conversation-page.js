@@ -102,7 +102,7 @@ export class ConversationPage extends React.Component {
                 <br />
                 <p>{this.props.player.position} #{this.props.player.number} | {this.props.player.team}</p>
                 <br />
-                <div>
+                <div className="convo-area">
                     <h4>Player Conversation</h4>
                     <br />
                     {

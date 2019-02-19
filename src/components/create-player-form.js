@@ -99,6 +99,7 @@ export class CreatePlayerForm extends React.Component {
                     onChange={this.handleTeamChange}
                     required
                 />
+                <br />
                 <button type="submit">Create Player</button>
             </form>
         );

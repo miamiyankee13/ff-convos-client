@@ -4,11 +4,9 @@
 
 .nav-item {
     margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     list-style-type: none;
-    padding: 8px;
-    border: 2px solid navy;
-    border-radius: 10px;
-    background-color: navy;
     cursor: pointer;
 }
 
@@ -17,13 +15,14 @@
 }
 
 a {
-    text-decoration: none;
-    color: white;
     text-shadow: none;
+    color: navy;
+    font-weight: bold;
 }
 
 @media (max-width: 845px) {
-    .flex-nav {
-        flex-direction: column;
+    .nav-item {
+        margin: 2px;
+        padding: 3px;
     }
 }

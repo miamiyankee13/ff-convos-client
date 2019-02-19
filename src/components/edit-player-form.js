@@ -122,6 +122,7 @@ export class EditPlayerForm extends React.Component {
                     onChange={this.handleTeamChange}
                     required
                 />
+                <br />
                 <button type="submit">Edit Player</button>
             </form>
         );
