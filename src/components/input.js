@@ -1,6 +1,9 @@
+//Import dependency
 import React from 'react';
 
 export default class Input extends React.Component {
+    
+    //Check if inputs touched
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
@@ -8,6 +11,7 @@ export default class Input extends React.Component {
     }
 
     render() {
+        //Display neccessary errors & warnings
         let error;
         if (this.props.meta.touched && this.props.meta.error) {
             error = <div className="form-error">{this.props.meta.error}</div>;

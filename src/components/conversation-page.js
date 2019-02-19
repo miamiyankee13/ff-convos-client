@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
@@ -17,20 +18,24 @@ export class ConversationPage extends React.Component {
         this.removeComment = this.removeComment.bind(this);
     }
 
+    //Fetch current player
     componentDidMount() {
         this.props.dispatch(fetchCurrentPlayer(this.props.match.params.id))
     }
 
+    //Clear current player
     componentWillUnmount() {
         this.props.dispatch(clearCurrentPlayer());
     }
 
+    //Track value of comment
     handleChange(event) {
         this.setState({
             textValue: event.target.value
         });
     }
 
+    //Validate comment, add comment to player, fetch current player, & clear comment value
     addComment(event) {
         event.preventDefault();
         const player = this.props.player;
@@ -47,6 +52,7 @@ export class ConversationPage extends React.Component {
         });
     }
 
+    //Remove comment from player & fetch current player
     removeComment(event) {
         event.preventDefault();
         const player = this.props.player;

@@ -1,7 +1,9 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux'
 
 export class PlayerOptions extends React.Component {
+    
     render() {
         //Create JSX options for players
         const playerOptions = this.props.players.map((player, index) => {

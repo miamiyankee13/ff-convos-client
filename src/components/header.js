@@ -1,11 +1,14 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import Nav from './nav';
 import './styles/header.css';
 
 export class Header extends React.Component {
+    
     render() {
         
+        //Display navigation if logged in
         let navigation;
         if (this.props.loggedIn) {
             navigation = (

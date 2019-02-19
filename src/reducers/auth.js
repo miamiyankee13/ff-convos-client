@@ -1,3 +1,4 @@
+//Import modules
 import {
     SET_AUTH_TOKEN,
     CLEAR_AUTH,
@@ -13,6 +14,7 @@ const initialState = {
     error: null
 };
 
+//Reducer for auth actions
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case SET_AUTH_TOKEN:

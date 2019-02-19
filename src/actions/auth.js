@@ -1,9 +1,11 @@
+//Import dependencies  & modules
 import jwtDecode from 'jwt-decode';
 import { SubmissionError } from 'redux-form';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 import { saveAuthToken, clearAuthToken } from '../local-storage';
 
+//Create action types & creators
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
     type: SET_AUTH_TOKEN,
@@ -41,6 +43,7 @@ const storeAuthInfo = (authToken, dispatch) => {
     saveAuthToken(authToken);
 }
 
+//Login fetch request
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return fetch(`${API_BASE_URL}/api/auth/login`, {
@@ -74,6 +77,7 @@ export const login = (username, password) => dispatch => {
         });
 }
 
+//Refresh fetch request
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
     const authToken = getState().auth.authToken;

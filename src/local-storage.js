@@ -1,3 +1,4 @@
+//Create local storage functions for accessing & storing auth token
 export const loadAuthToken = () => {
     return localStorage.getItem('authToken');
 };

@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { addPlayerToUser, fetchUserPlayers } from '../actions/players';
@@ -14,12 +15,14 @@ export class PlayerDropdown extends React.Component {
         this.trackPlayer = this.trackPlayer.bind(this);
     }
 
+    //Track option value
     handleChange(event) {
         this.setState({
             optionValue: event.target.value
         });
     }
 
+    //Check if player already tracked, add player to user, & fetch user players
     trackPlayer(event) {
         event.preventDefault();
         const index = this.state.optionValue;

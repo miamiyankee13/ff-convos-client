@@ -1,3 +1,4 @@
+//Import dependency
 import React from 'react';
 
 export default function NotFoundPage() {

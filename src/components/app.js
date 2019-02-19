@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom'
@@ -14,6 +15,7 @@ import { refreshAuthToken } from '../actions/auth';
 import './styles/app.css';
 
 export class App extends React.Component {
+    
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
             // When we are logged in, refresh the auth token periodically
@@ -24,10 +26,12 @@ export class App extends React.Component {
         }
     }
 
+    //Stop periodic refresh
     componentWillUnmount() {
         this.stopPeriodicRefresh();
     }
 
+    //Refresh auth token periodically
     startPeriodicRefresh() {
         this.refreshInterval = setInterval(
             () => this.props.dispatch(refreshAuthToken()),
@@ -35,6 +39,7 @@ export class App extends React.Component {
         );
     }
 
+    //Clear auth token refresh
     stopPeriodicRefresh() {
         if (!this.refreshInterval) {
             return;

@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -10,6 +11,7 @@ export class LoginPage extends React.Component {
         this.goToRegistration = this.goToRegistration.bind(this);
     }
 
+    //Route to registration page
     goToRegistration(event) {
         event.preventDefault();
         this.props.history.push(`/register`);

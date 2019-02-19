@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUserPlayers, fetchUserPlayersByPosition } from '../actions/players';
@@ -13,12 +14,14 @@ export class PlayerFilter extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    //Track option value
     handleChange(event) {
         this.setState({
             optionValue: event.target.value
         });
     }
 
+    //Fetch user players by position
     filterPlayers(event) {
         event.preventDefault();
         const filter = this.state.optionValue;

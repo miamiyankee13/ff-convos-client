@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,11 +14,13 @@ export class Nav extends React.Component {
         this.scrollTop = this.scrollTop.bind(this);
     }
 
+    //Clear authentication
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
 
+    //Scroll content to top
     scrollTop() {
         document.getElementsByClassName('flex-bottom')[0].scrollTop=0;
     }

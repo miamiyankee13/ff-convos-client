@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
@@ -6,8 +7,10 @@ import authReducer from './reducers/auth';
 import playersReducer from './reducers/players'
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
+//Add redux dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+//Create store
 const store = createStore(
     combineReducers({
         form: formReducer,

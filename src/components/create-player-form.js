@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { createPlayer } from '../actions/players';
@@ -19,30 +20,35 @@ export class CreatePlayerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    //Track value of name
     handleNameChange(event) {
         this.setState({
             nameValue: event.target.value
         });
     }
 
+    //Track value of position
     handlePositionChange(event) {
         this.setState({
             positionValue: event.target.value
         });
     }
 
+    //Track value of number
     handleNumberChange(event) {
         this.setState({
             numberValue: event.target.value
         })
     }
 
+    //Track value of team
     handleTeamChange(event) {
         this.setState({
             teamValue: event.target.value
         });
     }
 
+    //Create player
     handleSubmit(event) {
         event.preventDefault();
         const name = this.state.nameValue;

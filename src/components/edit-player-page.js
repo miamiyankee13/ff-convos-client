@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
@@ -6,6 +7,8 @@ import EditPlayerForm from './edit-player-form';
 import LoadingPage from './loading-page';
 
 export class EditPlayerPage extends React.Component {
+    
+    //Fetch players
     componentDidMount() {
         this.props.dispatch(fetchPlayers())
     }

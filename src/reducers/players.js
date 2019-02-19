@@ -1,3 +1,4 @@
+//Import modules
 import {
     FETCH_PLAYERS_REQUEST,
     FETCH_PLAYERS_SUCCESS,
@@ -41,6 +42,7 @@ const initialState = {
     error: null
 };
 
+//Reducer for player actions
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case FETCH_PLAYERS_REQUEST:

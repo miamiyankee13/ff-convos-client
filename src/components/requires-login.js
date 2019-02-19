@@ -1,7 +1,9 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+//Login validation for other components
 export default () => Component => {
     function RequiresLogin(props) {
         const {authenticating, loggedIn, error, ...passThroughProps} = props;

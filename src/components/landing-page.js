@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -10,12 +11,14 @@ export class LandingPage extends React.Component {
         this.goToLogin = this.goToLogin.bind(this);
     }
 
+    //Route to login page
     goToLogin(event) {
         event.preventDefault();
         this.props.history.push(`/login`);
     }
 
     render() {
+        //If logged in, route to players page
         if (this.props.loggedIn) {
             return <Redirect to="/players" />;
         }

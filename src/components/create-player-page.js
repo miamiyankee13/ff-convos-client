@@ -1,3 +1,4 @@
+//Track value of name
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
@@ -5,6 +6,7 @@ import CreatePlayerForm from './create-player-form';
 import LoadingPage from './loading-page';
 
 export class CreatePlayerPage extends React.Component {
+    
     render() {
         //If loading, return loading page
         if (this.props.loading) {

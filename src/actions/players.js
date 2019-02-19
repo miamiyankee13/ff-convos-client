@@ -1,7 +1,8 @@
+//Import modules
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 
-//FETCH PLAYERS
+//Create action types & creators
 export const FETCH_PLAYERS_REQUEST = 'FETCH_PLAYERS_REQUEST';
 export const fetchPlayersRequest = () => ({
     type: FETCH_PLAYERS_REQUEST
@@ -19,7 +20,6 @@ export const fetchPlayersError = error => ({
     error
 });
 
-//FETCH USER PLAYERS
 export const FETCH_USER_PLAYERS_REQUEST = 'FETCH_USER_PLAYERS_REQUEST';
 export const fetchUserPlayersRequest = () => ({
     type: FETCH_USER_PLAYERS_REQUEST
@@ -37,7 +37,6 @@ export const fetchUserPlayersError = error => ({
     error
 });
 
-//FETCH USER PLAYERS BY POSITION
 export const FETCH_USER_PLAYERS_BY_POSITION_REQUEST = 'FETCH_USER_PLAYERS_BY_POSITION_REQUEST';
 export const fetchUserPlayersByPositionRequest = () => ({
     type: FETCH_USER_PLAYERS_BY_POSITION_REQUEST
@@ -55,7 +54,6 @@ export const fetchUserPlayersByPositionError = error => ({
     error
 });
 
-//FETCH CURRENT PLAYER
 export const FETCH_CURRENT_PLAYER_REQUEST = 'FETCH_CURRENT_PLAYER_REQUEST';
 export const fetchCurrentPlayerRequest = () => ({
     type: FETCH_CURRENT_PLAYER_REQUEST
@@ -73,13 +71,11 @@ export const fetchCurrentPlayerError = error => ({
     error
 });
 
-//CLEAR CURRENT PLAYER
 export const CLEAR_CURRENT_PLAYER = 'CLEAR_CURRENT_PLAYER';
 export const clearCurrentPlayer = () => ({
     type: CLEAR_CURRENT_PLAYER
 });
 
-//ADD PLAYER TO USER
 export const ADD_PLAYER_TO_USER_REQUEST = 'ADD_PLAYER_TO_USER_REQUEST';
 export const addPlayerToUserRequest = () => ({
     type: ADD_PLAYER_TO_USER_REQUEST
@@ -96,7 +92,6 @@ export const addPlayerToUserError = error => ({
     error
 });
 
-//REMOVE PLAYER FROM USER
 export const REMOVE_PLAYER_FROM_USER_REQUEST = 'REMOVE_PLAYER_FROM_USER_REQUEST';
 export const removePlayerFromUserRequest = () => ({
     type: REMOVE_PLAYER_FROM_USER_REQUEST
@@ -113,7 +108,6 @@ export const removePlayerFromUserError = error => ({
     error
 });
 
-//ADD COMMENT TO PLAYER
 export const ADD_COMMENT_TO_PLAYER_REQUEST = 'ADD_COMMENT_TO_PLAYER_REQUEST';
 export const addCommentToPlayerRequest = () => ({
     type: ADD_COMMENT_TO_PLAYER_REQUEST
@@ -130,7 +124,6 @@ export const addCommentToPlayerError = error => ({
     error
 });
 
-//REMOVE COMMENT FROM PLAYER
 export const REMOVE_COMMENT_FROM_PLAYER_REQUEST = 'REMOVE_COMMENT_FROM_PLAYER_REQUEST';
 export const removeCommentFromPlayerRequest = () => ({
     type: REMOVE_COMMENT_FROM_PLAYER_REQUEST
@@ -147,7 +140,6 @@ export const removeCommentFromPlayerError = error => ({
     error
 });
 
-//CREATE PLAYER
 export const CREATE_PLAYER_REQUEST = 'CREATE_PLAYER_REQUEST';
 export const createPlayerRequest = () => ({
     type: CREATE_PLAYER_REQUEST
@@ -164,7 +156,6 @@ export const createPlayerError = error => ({
     error
 });
 
-//EDIT PLAYER
 export const EDIT_PLAYER_REQUEST = 'EDIT_PLAYER_REQUEST';
 export const editPlayerRequest = () => ({
     type: EDIT_PLAYER_REQUEST
@@ -181,6 +172,7 @@ export const editPlayerError = error => ({
     error
 });
 
+//GET players fetch request
 export const fetchPlayers = () => (dispatch) => {
     dispatch(fetchPlayersRequest());
     return fetch(`${API_BASE_URL}/api/players`, {
@@ -192,6 +184,7 @@ export const fetchPlayers = () => (dispatch) => {
         .catch(err => dispatch(fetchPlayersError(err)));
 }
 
+//GET user players fetch request
 export const fetchUserPlayers = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(fetchUserPlayersRequest());
@@ -207,6 +200,7 @@ export const fetchUserPlayers = () => (dispatch, getState) => {
         .catch(err => dispatch(fetchUserPlayersError(err)));
 }
 
+//GET user players by position fetch request
 export const fetchUserPlayersByPosition = (position) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(fetchUserPlayersByPositionRequest());
@@ -222,6 +216,7 @@ export const fetchUserPlayersByPosition = (position) => (dispatch, getState) => 
         .catch(err => dispatch(fetchUserPlayersByPositionError(err)));
 }
 
+//GET current player fetch request
 export const fetchCurrentPlayer = (id) => (dispatch) => {
     dispatch(fetchCurrentPlayerRequest());
     return fetch(`${API_BASE_URL}/api/players/${id}`, {
@@ -233,6 +228,7 @@ export const fetchCurrentPlayer = (id) => (dispatch) => {
         .catch(err => dispatch(fetchCurrentPlayerError(err)));
 }
 
+//PUT player to user fetch request
 export const addPlayerToUser = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(addPlayerToUserRequest());
@@ -248,6 +244,7 @@ export const addPlayerToUser = (id) => (dispatch, getState) => {
         .catch(err => dispatch(addPlayerToUserError(err)));
 }
 
+//DELETE player from user fetch request
 export const removePlayerFromUser = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(removePlayerFromUserRequest());
@@ -263,6 +260,7 @@ export const removePlayerFromUser = (id) => (dispatch, getState) => {
         .catch(err => dispatch(removePlayerFromUserError(err)));
 }
 
+//POST comment to player fetch request
 export const addCommentToPlayer = (id, content, author) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(addCommentToPlayerRequest());
@@ -285,6 +283,7 @@ export const addCommentToPlayer = (id, content, author) => (dispatch, getState) 
         .catch(err => dispatch(addCommentToPlayerError(err))); 
 }
 
+//DELETE comment from player fetch request
 export const removeCommentFromPlayer = (id, commentId) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(removeCommentFromPlayerRequest());
@@ -300,6 +299,7 @@ export const removeCommentFromPlayer = (id, commentId) => (dispatch, getState) =
         .catch(err => dispatch(removeCommentFromPlayerError(err)));
 }
 
+//POST new player fetch request
 export const createPlayer = (name, position, number, team) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(createPlayerRequest());
@@ -322,6 +322,7 @@ export const createPlayer = (name, position, number, team) => (dispatch, getStat
         .catch(err => dispatch(createPlayerError(err)));
 }
 
+//PUT existing player fetch request
 export const editPlayer = (id, name, position, number, team) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(editPlayerRequest());

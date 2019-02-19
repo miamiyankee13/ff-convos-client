@@ -1,3 +1,4 @@
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
@@ -15,11 +16,13 @@ export class PlayersPage extends React.Component {
         this.viewConvo = this.viewConvo.bind(this);
     }
     
+    //Fetch players & fetch user players
     componentDidMount() {
         this.props.dispatch(fetchPlayers());
         this.props.dispatch(fetchUserPlayers());
     }
 
+    //Untrack player & fetch user players
     untrackPlayer(event) {
         event.preventDefault();
         const index = event.target.getAttribute('data-index');
@@ -28,6 +31,7 @@ export class PlayersPage extends React.Component {
             .then(() => this.props.dispatch(fetchUserPlayers()));
     }
 
+    //Route to conversation page
     viewConvo(event) {
         event.preventDefault();
         const index = event.target.getAttribute('data-index');
