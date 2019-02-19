@@ -10,6 +10,7 @@ export class Nav extends React.Component {
         super(props);
 
         this.logOut = this.logOut.bind(this);
+        this.scrollTop = this.scrollTop.bind(this);
     }
 
     logOut() {
@@ -17,12 +18,16 @@ export class Nav extends React.Component {
         clearAuthToken();
     }
 
+    scrollTop() {
+        document.getElementsByClassName('flex-bottom')[0].scrollTop=0;
+    }
+
     render() {
         return (
             <ul className="flex-nav" aria-live="polite">
-                <li className="nav-item"><Link to="/players">My Players</Link></li>
-                <li className="nav-item"><Link to="/create">Create Player</Link></li>
-                <li className="nav-item"><Link to="/edit">Edit Player</Link></li>
+                <li className="nav-item"><Link to="/players" onClick={this.scrollTop}>My Players</Link></li>
+                <li className="nav-item"><Link to="/create" onClick={this.scrollTop}>Create Player</Link></li>
+                <li className="nav-item"><Link to="/edit" onClick={this.scrollTop}>Edit Player</Link></li>
                 <li className="nav-item"><Link to="/" onClick={this.logOut}>Log Out</Link></li>
             </ul>
         );
