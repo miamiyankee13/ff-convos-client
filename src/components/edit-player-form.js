@@ -65,7 +65,7 @@ export class EditPlayerForm extends React.Component {
         const player = this.props.players[index];
         const name = this.state.nameValue;
         const position = this.state.positionValue;
-        const number = this.state.numberValue.toString();
+        const number = this.state.numberValue
         const team = this.state.teamValue;
         this.props.dispatch(editPlayer(player._id, name, position, number, team));
     }

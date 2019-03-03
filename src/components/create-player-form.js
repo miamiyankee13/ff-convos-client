@@ -53,7 +53,7 @@ export class CreatePlayerForm extends React.Component {
         event.preventDefault();
         const name = this.state.nameValue;
         const position = this.state.positionValue;
-        const number = this.state.numberValue.toString();
+        const number = this.state.numberValue
         const team = this.state.teamValue;
         this.props.dispatch(createPlayer(name, position, number, team));
     }
