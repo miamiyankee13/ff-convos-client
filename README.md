@@ -33,6 +33,7 @@ The data for this application is provided by the [FF Convos API](https://github.
 * Redux Form
 * Redux Thunk
 * JSON Web Token (JWT)
+* Enzyme
 
 ## Screenshots
 [![FF-Landing.png](https://i.postimg.cc/FH1fMMKF/FF-Landing.png)](https://postimg.cc/WdLbrfrx)
