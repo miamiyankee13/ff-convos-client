@@ -68,6 +68,7 @@ export class App extends React.Component {
                     </main>
                     <footer className="flex-footer">
                         <p><strong><small>Copyright &copy; 2019 Anthony D'Amico</small></strong></p>
+                        <small><a href="https://github.com/miamiyankee13/ff-convos-client">View on GitHub</a></small>
                     </footer>
                 </div>
             </div>
