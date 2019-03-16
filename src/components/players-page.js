@@ -20,6 +20,7 @@ export class PlayersPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchPlayers());
         this.props.dispatch(fetchUserPlayers());
+        document.getElementsByClassName('flex-top')[0].scrollTop=0;
     }
 
     //Untrack player & fetch user players
