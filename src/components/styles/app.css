@@ -11,6 +11,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
     -webkit-overflow-scrolling: touch;
 }
 
