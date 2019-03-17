@@ -28,10 +28,41 @@ export class Nav extends React.Component {
     render() {
         return (
             <ul className="flex-nav" aria-live="polite">
-                <li className="nav-item"><Link to="/players" onClick={this.scrollTop}>My Players</Link></li>
-                <li className="nav-item"><Link to="/create" onClick={this.scrollTop}>Create Player</Link></li>
-                <li className="nav-item"><Link to="/edit" onClick={this.scrollTop}>Edit Player</Link></li>
-                <li className="nav-item"><Link to="/" onClick={this.logOut}>Log Out</Link></li>
+                <li className="nav-item">
+                    <Link 
+                        to="/players" 
+                        onClick={this.scrollTop} 
+                        className="fas fa-users fa-2x" 
+                        title="My Players">
+                        <span className="sr-only">My Players</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link 
+                        to="/create" 
+                        onClick={this.scrollTop}
+                        className="fas fa-plus-circle fa-2x"
+                        title="Create Player">
+                        <span className="sr-only">Create Player</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link 
+                        to="/edit" 
+                        onClick={this.scrollTop}
+                        className="fas fa-edit fa-2x"
+                        title="Edit Player">
+                        <span className="sr-only">Edit Player</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link 
+                        to="/" 
+                        onClick={this.logOut}
+                        className="fas fa-sign-out-alt fa-2x">
+                        <span className="sr-only">Log Out</span>
+                    </Link>
+                </li>
             </ul>
         );
     }
