@@ -1,6 +1,7 @@
 .flex-top {
     flex: 1;
     text-align: center;
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 header h1 {
