@@ -1,7 +1,6 @@
 .flex-top {
     flex: 1;
     text-align: center;
-    overflow-y: hidden;
 }
 
 header h1 {
