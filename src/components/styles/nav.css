@@ -8,9 +8,12 @@
     list-style-type: none;
 }
 
+.nav-item a {
+    text-decoration: none;
+}
+
 a {
     text-shadow: none;
-    text-decoration: none;
     color: navy;
     font-weight: bold;
 }
