@@ -6,7 +6,6 @@ import LoadingPage from './loading-page'
 import PlayerDropdown from './player-dropdown';
 import PlayerFilter from './player-filter';
 import { fetchPlayers, fetchUserPlayers, removePlayerFromUser } from '../actions/players';
-import ReactGA from 'react-ga';
 import './styles/players-page.css';
 
 export class PlayersPage extends React.Component {
@@ -21,7 +20,6 @@ export class PlayersPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchPlayers());
         this.props.dispatch(fetchUserPlayers());
-        ReactGA.pageview('/players');
     }
 
     //Untrack player & fetch user players
