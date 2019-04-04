@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import './styles/landing-page.css';
 
 export class LandingPage extends React.Component {
@@ -9,6 +10,11 @@ export class LandingPage extends React.Component {
         super(props);
 
         this.goToLogin = this.goToLogin.bind(this);
+    }
+
+    //Google analytics tracking
+    componentDidMount() {
+        ReactGA.pageview('/landing-page');
     }
 
     //Route to login page

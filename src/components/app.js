@@ -12,9 +12,15 @@ import CreatePlayerPage from './create-player-page';
 import EditPlayerPage from './edit-player-page';
 import NotFoundPage from './not-found-page';
 import { refreshAuthToken } from '../actions/auth';
+import ReactGA from 'react-ga';
 import './styles/app.css';
 
 export class App extends React.Component {
+
+    //Initialize google analytics tracking
+    componentDidMount() {
+        ReactGA.initialize('UA-137740948-1');
+    }
     
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
