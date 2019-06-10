@@ -1,4 +1,4 @@
-//Track value of name
+//Import dependencies & modules
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
