@@ -10,7 +10,7 @@ import { setAuthToken, refreshAuthToken } from './actions/auth';
 //Add redux dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-//Create store
+//Create store with multipl reducers
 const store = createStore(
     combineReducers({
         form: formReducer,
@@ -22,7 +22,7 @@ const store = createStore(
     )
 );
 
-// Hydrate the authToken from localStorage if it exist
+// Hydrate the authToken from localStorage if it exists
 const authToken = loadAuthToken();
 if (authToken) {
     const token = authToken;

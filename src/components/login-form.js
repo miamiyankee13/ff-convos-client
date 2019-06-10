@@ -6,7 +6,7 @@ import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
 
 export class LoginForm extends React.Component {
-    //Login user
+    //Dispatch login async action
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
     }
@@ -23,24 +23,20 @@ export class LoginForm extends React.Component {
         return (
             <form
                 className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
+                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 {error}
-                <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
-                    id="username"
+                    label="Username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
-                    id="password"
+                    label="Password"
                     validate={[required, nonEmpty]}
                 />
                 <br />
