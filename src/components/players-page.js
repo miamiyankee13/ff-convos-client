@@ -61,7 +61,7 @@ export class PlayersPage extends React.Component {
         //Create JSX for user players
         const userPlayers = this.props.userPlayers.map((player, index) => {
             return (
-                <div key={`player-${index}`} className="player">
+                <div key={player._id} className="player">
                     <h2 className="player-name">{player.name}</h2>
                     <p className="player-info">{player.position} #{player.number} | {player.team}</p>
                     <button data-index={index} onClick={this.viewConvo}>Conversation</button>
